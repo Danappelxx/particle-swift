@@ -105,6 +105,12 @@ public struct DeviceInformation {
     }
 }
 
+extension DeviceInformation: Identifiable {
+    public var id: String {
+        return self.deviceID
+    }
+}
+
 extension DeviceInformation: StringKeyedDictionaryConvertible {
     
     public init?(with dictionary: [String : Any]) {
@@ -230,6 +236,12 @@ public struct DeviceDetailInformation {
         self.deviceID = deviceID
         self.name = name
         self.product = product
+    }
+}
+
+extension DeviceDetailInformation: Identifiable {
+    public var id: String {
+        return self.deviceID
     }
 }
 
